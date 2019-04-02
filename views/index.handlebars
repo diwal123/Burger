@@ -1,0 +1,58 @@
+
+<div class="container">
+  <img id="fries" src="https://i.pinimg.com/originals/04/6b/e5/046be5117c238fe9f0a734e10e57e0ed.gif">
+  <img id="soda" src="http://atlas-content-cdn.pixelsquid.com/stock-images/glass-with-soda-donEAl1-600.jpg">
+
+  <div class="burger">
+
+<div class="row" id="header">
+  <div class="col-12">
+    <h1 id="burgerText">BURGER</h1>
+    <p id="burgertag">Devour Your Burger</p>
+  </div>
+</div>
+
+<div class="row" id="mainDiv">
+  <div class="col-6" id="mainDiv1">
+<h2 class="subHead">My Burger</h2>
+
+<ul>
+  {{#each burger}}
+  {{#unless devoured}}
+  <p>
+    <button data-burgerid="{{this.id}}" class="updateBurger" title="Devour it">&#10004</button>
+    {{this.burger}}
+    
+  </p>
+  {{/unless}}
+  {{/each}}
+</ul>
+
+</div>
+ <div class="col-6" id="mainDiv2">
+<h2 class="subHead">Devoured</h2>
+<ul>
+  {{#each burger}}
+  {{#if devoured}}
+  <p>
+    {{this.burger}}
+    <button data-burgerid="{{this.id}}" class="deleteBurger" title="Delete">&#10006</button>
+  </p>
+  {{/if}}
+  {{/each}}
+</ul>
+
+</div>
+</div>
+
+<form id="form">
+  <p>
+  <input type="text" id="newBurger">
+  </p>
+  <p>
+  <button type="submit" id="create"> <img id="burgerGif" src="https://cdn.dribbble.com/users/107759/screenshots/3765434/burger.gif" title="Add Your Burger"></button>
+  </p>
+</form>
+</div>
+
+</div>
